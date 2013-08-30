@@ -235,14 +235,94 @@
                 <section>
                     <section>
                         <h1>Introducing Git</h1>
-                        <h2 class="lowercase">$ git</h2>
+                        <h2 class="normalcase">$ git</h2>
                         <p>The git command-line</p>
                     </section>
 
                     <section>
                         <h2>Getting help</h2>
-                        <h3 class="lowercase">$ git help</h3>
-                        <h3 class="lowercase">$ git help <i>&lt;sub-command&gt;</i></h3>
+                        <h3 class="normalcase">$ git help</h3>
+                        <h3 class="normalcase">$ git help <i>&lt;sub-command&gt;</i></h3>
+                    </section>
+
+                    <section>
+                        <h2>Git version</h2>
+                        <h3 class="normalcase">$ git --version</h3>
+                    </section>
+
+                    <section>
+                        <h2>Create your first repository</h2>
+                        <h3 class="normalcase">$ mkdir hello</h3>
+                        <h3 class="normalcase">$ cd hello</h3>
+                        <h3 class="normalcase">$ git init</h3>
+                    </section>
+
+                    <section>
+                        <h2>Add a file for initial commit</h2>
+                        <h3 class="normalcase"><em>&lt;create a new file called </em><span class="uppercase">README</span><em>&gt;</em></h3>
+                        <h3 class="normalcase">$ git add <span class="uppercase">README</span></h3>
+                    </section>
+                    <section>
+                        <h2>Check status</h2>
+                        <h3 class="normalcase">$ git status</h3>
+                        <p>README is now in staging area</p>
+                        <pre><code>
+# On branch master
+#
+# Initial commit
+#
+# Changes to be committed:
+#   (use "git rm --cached &lt;file&gt;..." to unstage)
+#
+#       new file:   README
+#
+                        </code></pre>
+
+                    </section>
+
+                    <section>
+                        <h2>Create the initial commit</h2>
+                        <h3 class="normalcase">$ git commit -m "Initial commit"</h3>
+                        <pre><code>
+[master (root-commit) 9ff077b] Initial commit
+ 1 file changed, 1 insertion(+)
+ create mode 100644 README
+                        </code></pre>
+                    </section>
+                    <section>
+                        <h2>Check status</h2>
+                        <h3 class="normalcase">$ git status</h3>
+                        <p>First change has been committed</p>
+                        <pre><code>
+# On branch master
+nothing to commit, working directory clean
+                        </code></pre>
+                    </section>
+
+                    <section>
+                        <h2>Do some changes</h2>
+                        <h3 class="normalcase"><em>&lt;make some changes to</em> <span class="uppercase">README</span><em>&gt;</em></h3>
+                    </section>
+
+                    <section>
+                        <h2>Check differences</h2>
+                        <h3 class="normalcase">$ git diff</h3>
+                        <pre><code>
+diff --git a/README b/README
+index 96f0412..eeff8df 100644
+--- a/README
++++ b/README
+@@ -1 +1,3 @@
+ This is my first repository
++
++This is the change for the second commit
+                        </code></pre>
+                    </section>
+
+                    <section>
+                        <h2>Add the file and commit</h2>
+                        <h3 class="normalcase">$ git add <span class="uppercase">README</span></h3>
+                        <h3 class="normalcase">$ git commit -m "Modified README"</h3>
                     </section>
 
                 </section>

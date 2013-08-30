@@ -29,3 +29,9 @@ th {
 h1.lowercase, h2.lowercase, h3.lowercase {
     text-transform: lowercase;
 }
+span.uppercase {
+    text-transform: uppercase;
+}
+h1.normalcase, h2.normalcase, h3.normalcase {
+    text-transform: none;
+}
