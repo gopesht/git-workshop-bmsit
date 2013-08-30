@@ -1,0 +1,284 @@
+<!doctype html>
+<html lang="en">
+
+    <head>
+        <meta charset="utf-8">
+
+        <title>Git workshop for beginners - WFS-India</title>
+
+        <meta name="description" content="An introduction to Git">
+        <meta name="author" content="Kaustav Das Modak">
+
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+        <link rel="stylesheet" href="css/reveal.min.css">
+        <link rel="stylesheet" href="css/theme/solarized.css" id="theme">
+
+        <!-- For syntax highlighting -->
+        <link rel="stylesheet" href="lib/css/zenburn.css">
+
+        <link rel="stylesheet" href="css/custom.css">
+
+        <!-- If the query includes 'print-pdf', use the PDF print sheet -->
+        <script>
+         document.write( '<link rel="stylesheet" href="css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
+        </script>
+
+        <!--[if lt IE 9]>
+        <script src="lib/js/html5shiv.js"></script>
+        <![endif]-->
+    </head>
+
+    <body>
+
+        <div class="reveal">
+
+            <!-- Begin content -->
+
+            <div class="slides">
+
+                <section>
+                    <h1>Git workshop</h1>
+                    <p>
+                        <br>
+                    </p>
+
+                    <!-- Venue and date -->
+                    <p>B.M.S.I.T</p>
+                    <p>August 31, 2013</p>
+                    <!-- End venue and date -->
+
+                </section>
+
+                <section>
+                    <h2>Today we shall learn:</h2>
+                    <ul>
+                        <li class="fragment">About Revision Control Systems</li>
+                        <li class="fragment">About Git</li>
+                        <li class="fragment">How we can use Git</li>
+                        <li class="fragment">Git and FOSS</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <section>
+                        <h2>About Revision Control Systems</h2>
+                    </section>
+
+                    <section>
+                        <h3>Revision Control == Version Control</h3>
+                        <p>RCS == VCS</p>
+                        <ul>
+                            <li class="fragment">Track code changes over a period of time</li>
+                            <li class="fragment">Useful when multiple contributors work on the same piece of code</li>
+                        </ul>
+                    </section>
+
+                    <section>
+                        <h3>VCS is not for software projects only</h3>
+                        <p class="fragment">VCSs are best-suited for tracking text files, but can be used for binary files like images, audios, videos etc</p>
+                        <p class="fragment">They are used for documentation projects, writing stories, books, articles etc</p>
+                    </section>
+
+                    <section>
+                        <h2>Types of VCS</h2>
+                        <br><br>
+                        <div class="fragment gap">
+                            <h3>Centralised Version Control Systems (CVCS)</h3>
+                            <ul>
+                                <li>Everything is stored on a central server</li>
+                                <li>Needs network access to server for any transaction</li>
+                                <li>e.g. Subversion, CVS</li>
+                            </ul>
+                        </div>
+                        <br>
+                        <div class="fragment">
+                            <h3>Distributed Version Control Systems (DVCS)</h3>
+                            <ul>
+                                <li>Each peer has full revision history</li>
+                                <li>Needs network access only when sharing changes</li>
+                                <li>Can emulate a centralised form for collaboration</li>
+                                <li>e.g. Git, Mercurial, Bazaar</li>
+                            </ul>
+                        </div>
+                    </section>
+
+                </section>
+
+                <section>
+
+                    <section>
+                        <h2>What is Git?</h2>
+                        <p>Git is a distributed version-control system which is famed to be extremely fast and flexible</p>
+                    </section>
+
+                    <section>
+                        <h2>A brief history</h2>
+                        <ul>
+                            <li>Developed by Linus Torvalds as the version control system for the Linux kernel project</li>
+                            <li>The Linux kernel project is one of the largest, oldest and most well-kept Git repository</li>
+                        </ul>
+                    </section>
+
+                    <section>
+                        <h2>Why Git?</h2>
+                        <ul>
+                            <li class="fragment"><strong>Speed</strong> - Think of VCS with Saturn V rockets attached</li>
+                            <li class="fragment"><strong>Reliability</strong> - Each revision is uniquely maintained</li>
+                            <li class="fragment"><strong>Lightweight</strong> - Git core is extremely lightweight</li>
+                            <li class="fragment"><strong>Plugins</strong> - For Emacs, Eclipse and other text editors</li>
+                            <li class="fragment"><strong>Git is COOL</strong></li>
+                        </ul>
+                    </section>
+
+                </section>
+
+                <section>
+                    <section>
+                        <h2>Terminologies</h2>
+                        <p>Let us look at some common terminologies associated with Git and VCS in general</p>
+                    </section>
+
+                    <section>
+                        <h3>Repository ("repo")</h3>
+                        <ul>
+                            <li>A repository is the project folder</li>
+                            <li>Collection of all information related to a project, including project history, files, different branches</li>
+                            <li>Git repositories are stored in <code>.git</code> subfolders</li>
+                        </ul>
+                    </section>
+
+                    <section>
+                        <h3>Working tree</h3>
+                        <ul>
+                            <li>State of the repository where all files are available for editing</li>
+                            <li>Files tracked by a repository can be changed only through a working tree</li>
+                        </ul>
+                    </section>
+
+                    <section>
+                        <h3>Bare repository</h3>
+                        <ul>
+                            <li>A repo only with the <code>.git</code> directory, without a working tree</li>
+                            <li>Project files are stored in uneditable, compressed binary form</li>
+                            <li>Those files can be checked out to a working tree when they require editing</li>
+                            <li>Repositories on central servers are stored in bare form</li>
+                        </ul>
+                    </section>
+
+                    <section>
+                        <h3>Commits</h3>
+                        <ul>
+                            <li>Changes saved in a repository are called commits in git</li>
+                            <li>Permanent snapshots of particular states of the repository</li>
+                        </ul>
+                    </section>
+
+                    <section>
+                        <h3>Pushing</h3>
+                        <p>Sending changes to a remote repository</p>
+                        <br>
+                        <h3>Pulling</h3>
+                        <p>Fetching changes from a remote repository</p>
+                    </section>
+
+                    <section>
+                        <h3>Branch</h3>
+                        <ul>
+                            <li>Particular flow of history within a repo</li>
+                            <li>Each branch can have a separate set of history</li>
+                            <li>Default branch in git is "master"</li>
+                        </ul>
+                    </section>
+
+                    <section>
+                        <h3>Merge</h3>
+                        <ul>
+                            <li>Branches which have different changes can be merged together</li>
+                            <li>Merge conflicts arise if changes have been made to same file in different branches</li>
+                            <li>Branches can diverge if they have too different changes</li>
+                        </ul>
+                    </section>
+
+                    <section>
+                        <h3>Cloning</h3>
+                        <ul>
+                            <li>Copying an existing repository</li>
+                            <li>Git can clone over various types of remote repos</li>
+                        </ul>
+                    </section>
+
+                    <section>
+                        <h3>Remotes</h3>
+                        <ul>
+                            <li>A remote repo is a copy of the same repo in another location</li>
+                            <li>They are basically URLs pointing to remote copies of the repo</li>
+                            <li>Each remote in git is identified by a name</li>
+                            <li>Default remote after cloning is named "origin"</li>
+                        </ul>
+                    </section>
+
+                    <section>
+                        <h3>Fork</h3>
+                        <ul>
+                            <li>A clone which is taken as a starting point for creating something different from the original repo</li>
+                            <li>A new copy of the entire repository</li>
+                            <li>Changes can be merged upstream from time-to-time</li>
+                        </ul>
+                    </section>
+
+                </section>
+
+                <section>
+                    <section>
+                        <h1>Introducing Git</h1>
+                        <h2 class="lowercase">$ git</h2>
+                        <p>The git command-line</p>
+                    </section>
+
+                    <section>
+                        <h2>Getting help</h2>
+                        <h3 class="lowercase">$ git help</h3>
+                        <h3 class="lowercase">$ git help <i>&lt;sub-command&gt;</i></h3>
+                    </section>
+
+                </section>
+            </div>
+
+        </div>
+
+        <script src="lib/js/head.min.js"></script>
+        <script src="js/reveal.min.js"></script>
+
+        <script>
+
+         // Full list of configuration options available here:
+         // https://github.com/hakimel/reveal.js#configuration
+         Reveal.initialize({
+             controls: true,
+             progress: true,
+             history: true,
+             center: true,
+
+             theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+             transition: Reveal.getQueryHash().transition || 'linear', // default/cube/page/concave/zoom/linear/fade/none
+
+             // Optional libraries used to extend on reveal.js
+             dependencies: [
+                 { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+                 { src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                 { src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                 { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+                 { src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+                 { src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+             ]
+         });
+
+        </script>
+
+    </body>
+
+</html>
