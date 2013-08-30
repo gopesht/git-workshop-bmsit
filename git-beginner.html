@@ -325,7 +325,213 @@ index 96f0412..eeff8df 100644
                         <h3 class="normalcase">$ git commit -m "Modified README"</h3>
                     </section>
 
+                    <section>
+                        <h2>Check revision history</h2>
+                        <h3 class="normalcase">$ git log</h3>
+                        <pre><code>
+commit 20ac39fb4e12237af37ae480f990eae2f4592a6b
+Author: Kaustav Das Modak &lt;kaustav.dasmodak@yahoo.co.in&gt;
+Date:   Fri Aug 30 13:57:43 2013 +0530
+
+    Modified README
+
+commit 9ff077b996e6cf917788d8d6393ef07fd9c2b753
+Author: Kaustav Das Modak &lt;kaustav.dasmodak@yahoo.co.in&gt;
+Date:   Fri Aug 30 09:43:12 2013 +0530
+
+    Initial commit
+                        </code></pre>
+                    </section>
+
+                    <section>
+                        <h2>Another way to visualize Git Log</h2>
+                        <h3 class="normalcase">$ git log --pretty=oneline</h3>
+                        <pre><code>
+20ac39fb4e12237af37ae480f990eae2f4592a6b Modified README
+9ff077b996e6cf917788d8d6393ef07fd9c2b753 Initial commit
+                        </code></pre>
+                    </section>
                 </section>
+
+                <section>
+                    <h1>Break</h1>
+                    <h2>BRB in 10 mins</h2>
+                </section>
+
+                <section>
+
+                    <section>
+                        <h1>Diving into Git</h1>
+                        <ul>
+                            <li>Branches</li>
+                            <li>Clones</li>
+                            <li>Merges</li>
+                        </ul>
+                    </section>
+
+                    <section>
+                        <h2>Branching in Git</h2>
+                        <h3 class="normalcase">$ git branch</h3>
+                        <pre><code>* master</code></pre>
+                    </section>
+
+                    <section>
+                        <h2>Create and switch to a new branch</h2>
+                        <h3 class="normalcase">$ git branch newbranch</h3>
+                        <h3 class="normalcase">$ git checkout newbranch</h3>
+                        <pre><code>Switched to branch 'newbranch'</code></pre>
+                        <p>
+                            <br><br>
+                            Shortcut<br>
+                            <code>$ git checkout -b newbranch</code>
+                        </p>
+                    </section>
+
+                    <section>
+                        <h2>Create a new file, add it and commit</h2>
+                        <h3 class="normalcase">&lt;create a new file&gt;</h3>
+                        <h3 class="normalcase">$ git add .</h3>
+                        <h3 class="normalcase">$ git commit</h3>
+                    </section>
+
+                    <section>
+                        <h2>Commit message convention</h2>
+                        <ul>
+                            <li>First line contains a brief description of what the commit is about (<= 50characters)</li>
+                            <li>Give double line breaks, followed by a detailed description</li>
+                            <li>Lists appear with hyphens in the beginning</li>
+                            <li>Use double line breaks to separate paragraphs</li>
+                            <li>Write commit messages in imperative</li>
+                        </ul>
+                    </section>
+
+                    <section>
+                        <h2>Example commit message</h2>
+                        <pre>
+Capitalized, short (50 chars or less) summary
+
+More detailed explanatory text, if necessary.  Wrap it to about 72
+characters or so.  In some contexts, the first line is treated as the
+subject of an email and the rest of the text as the body.  The blank
+line separating the summary from the body is critical (unless you omit
+the body entirely); tools like rebase can get confused if you run the
+two together.
+
+Write your commit message in the imperative: "Fix bug" and not "Fixed bug"
+or "Fixes bug."  This convention matches up with commit messages generated
+by commands like git merge and git revert.
+
+Further paragraphs come after blank lines.
+
+- Bullet points are okay, too
+
+- Typically a hyphen or asterisk is used for the bullet, preceded by a
+  single space, with blank lines in between, but conventions vary here
+
+- Use a hanging indent
+                        </pre>
+                    </section>
+
+                    <section>
+                        <h2>Modify previous commit message</h2>
+                        <h3 class="lowercase">$ git commit --amend</h3>
+                    </section>
+
+                    <section>
+                        <h2 class="normalcase">.gitignore</h2>
+                        <p>Have git ignore certain files</p>
+                        <ul>
+                            <li>One pattern per line</li>
+                            <li>One .gitignore file per directory</li>
+                            <li>Rules cascade through sub-directories</li>
+                        </ul>
+                    </section>
+
+                    <section>
+                        <h2>Merge changes with another branch</h2>
+                        <h3 class="normalcase">$ git checkout master</h3>
+                        <h3 class="normalcase">$ git merge newbranch</h3>
+                        <pre><code>
+Updating 20ac39f..9f16d40
+Fast-forward
+ ME | 1 +
+ 1 file changed, 1 insertion(+)
+ create mode 100644 ME
+                        </code></pre>
+                    </section>
+
+                </section>
+
+                <section>
+                    <section>
+                        <h2>Clone a repo</h2>
+                        <h3 class="normalcase">$ git clone &lt;remote url&gt;</h3>
+                    </section>
+
+                    <section>
+                        <h2>Browse through the repo</h2>
+                        <p>Use $ git log, create branches, do edits and commits, e.g.:</p>
+                        <br>
+                        <h3 class="normalcase">$ git checkout -b patch-1</h3>
+                    </section>
+
+                    <section>
+                        <h2>Push changes to origin</h2>
+                        <h3 class="normalcase">$ git push origin patch-1</h3>
+                    </section>
+
+                    <section>
+                        <h2>Delete a local branch</h2>
+                        <h3 class="normalcase">$ git branch -d patch-1</h3>
+                    </section>
+
+                    <section>
+                        <h2>Delete a remote branch</h2>
+                        <h3 class="normalcase">$ git push origin :patch-1</h3>
+                    </section>
+
+                </section>
+
+                <section>
+                    <section>
+                        <h1>Working with Forks</h1>
+                    </section>
+
+                    <section>
+                        <h2>Begin a fork by cloning a repo</h2>
+                        <h2 class="fragment">Work on a new branch</h2>
+                        <h2 class="fragment">Merge changes periodically from upstream</h2>
+                    </section>
+
+                    <section>
+                        <h2>Setting an upstream</h2>
+                        <h3 class="normalcase">$ git remote add upstream &lt;upstream url&gt;</h3>
+                    </section>
+
+                    <section>
+                        <h2>Pull changes from upstream</h2>
+                        <h3 class="normalcase">$ git pull upstream</h3>
+                    </section>
+
+                    <section>
+                        <h2>A better way to pull</h2>
+                        <h3 class="normalcase">$ git fetch upstream</h3>
+                        <h3 class="normalcase">$ git merge upstream/&lt;branch&gt;</h3>
+                    </section>
+
+                    <section>
+                        <h2>Now you can push to origin and merge changes occassionally from upstream</h2>
+                    </section>
+                </section>
+
+                <section>
+                    <h1>That was all!</h1>
+                    <h1>Thank you</h1>
+
+                    <p>This was a HTML5 presentation, written using RevealJS</p>
+                </section>
+
+                
             </div>
 
         </div>
